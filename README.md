@@ -1,16 +1,15 @@
-# video_vntny
+# Video Player for Vntny
 
-A new Flutter project.
+1. Homescreen, user need to search a movie video first
+2. When user click one of the movies, screen will move to video player screen with other movies
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Screenshots Android
 
-A few resources to get you started if this is your first Flutter project:
+![App Screenshot](https://raw.githubusercontent.com/thesmalleyes/flutter-player/main/screenshots/android-home.png)
+![App Screenshot](https://raw.githubusercontent.com/thesmalleyes/flutter-player/main/screenshots/android-player.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots iOS
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![App Screenshot](https://raw.githubusercontent.com/thesmalleyes/flutter-player/main/screenshots/ios-home.png)
+![App Screenshot](https://raw.githubusercontent.com/thesmalleyes/flutter-player/main/screenshots/ios-player.png)
