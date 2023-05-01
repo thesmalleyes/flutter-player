@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:video_vntny/constants/app_colors.dart';
-import 'package:video_vntny/home/home_screen.dart';
+import 'package:video_vntny/data/implementation/movie_repository_impl.dart';
+import 'package:video_vntny/view/home/cubit/movie/get_movie_cubit.dart';
+import 'package:video_vntny/view/home/home_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -14,7 +17,10 @@ class App extends StatelessWidget {
         primarySwatch: AppColors.primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomeScreen(),
+      home: BlocProvider(
+        create: (context) => GetMovieCubit(MovieRepositoryImpl()),
+        child: const HomeScreen(),
+      ),
     );
   }
 }
