@@ -12,11 +12,11 @@ class GetMovieCubit extends Cubit<GetMovieState> {
 
   request(String keyword) async {
     emit(const GetMovieState.loading());
-    // try {
-    final result = await repository.getMovies(keyword: keyword);
-    emit(GetMovieState.loaded(result));
-    // } catch (e) {
-    //   emit(GetMovieState.error(e.toString()));
-    // }
+    try {
+      final result = await repository.getMovies(keyword: keyword);
+      emit(GetMovieState.loaded(result));
+    } catch (e) {
+      emit(GetMovieState.error(e.toString()));
+    }
   }
 }

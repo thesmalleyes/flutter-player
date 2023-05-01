@@ -20,6 +20,7 @@ class MovieModel with _$MovieModel {
     String? previewUrl,
     required DateTime releaseDate,
     required String country,
+    @Default(0) int trackTimeMillis,
     required String primaryGenreName,
   }) = _MovieModel;
 

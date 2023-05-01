@@ -10,14 +10,14 @@ class MovieRepositoryImpl implements MovieRepository {
   @override
   Future<MoviesResponse> getMovies(
       {String keyword = '', String entity = 'musicVideo'}) async {
-    // try {
-    var params = {'term': keyword, 'entity': entity};
-    final response = await dio.get('https://itunes.apple.com/search',
-        queryParameters: params);
-    log(response.data.toString());
-    return MoviesResponse.fromJson(jsonDecode(response.data));
-    // } catch (e) {
-    //   throw e.toString();
-    // }
+    try {
+      var params = {'term': keyword, 'entity': entity};
+      final response = await dio.get('https://itunes.apple.com/search',
+          queryParameters: params);
+      log(response.data.toString());
+      return MoviesResponse.fromJson(jsonDecode(response.data));
+    } catch (e) {
+      throw e.toString();
+    }
   }
 }

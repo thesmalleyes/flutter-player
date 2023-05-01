@@ -34,6 +34,7 @@ mixin _$MovieModel {
   String? get previewUrl => throw _privateConstructorUsedError;
   DateTime get releaseDate => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
+  int get trackTimeMillis => throw _privateConstructorUsedError;
   String get primaryGenreName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -63,6 +64,7 @@ abstract class $MovieModelCopyWith<$Res> {
       String? previewUrl,
       DateTime releaseDate,
       String country,
+      int trackTimeMillis,
       String primaryGenreName});
 }
 
@@ -93,6 +95,7 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
     Object? previewUrl = freezed,
     Object? releaseDate = null,
     Object? country = null,
+    Object? trackTimeMillis = null,
     Object? primaryGenreName = null,
   }) {
     return _then(_value.copyWith(
@@ -152,6 +155,10 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String,
+      trackTimeMillis: null == trackTimeMillis
+          ? _value.trackTimeMillis
+          : trackTimeMillis // ignore: cast_nullable_to_non_nullable
+              as int,
       primaryGenreName: null == primaryGenreName
           ? _value.primaryGenreName
           : primaryGenreName // ignore: cast_nullable_to_non_nullable
@@ -183,6 +190,7 @@ abstract class _$$_MovieModelCopyWith<$Res>
       String? previewUrl,
       DateTime releaseDate,
       String country,
+      int trackTimeMillis,
       String primaryGenreName});
 }
 
@@ -211,6 +219,7 @@ class __$$_MovieModelCopyWithImpl<$Res>
     Object? previewUrl = freezed,
     Object? releaseDate = null,
     Object? country = null,
+    Object? trackTimeMillis = null,
     Object? primaryGenreName = null,
   }) {
     return _then(_$_MovieModel(
@@ -270,6 +279,10 @@ class __$$_MovieModelCopyWithImpl<$Res>
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String,
+      trackTimeMillis: null == trackTimeMillis
+          ? _value.trackTimeMillis
+          : trackTimeMillis // ignore: cast_nullable_to_non_nullable
+              as int,
       primaryGenreName: null == primaryGenreName
           ? _value.primaryGenreName
           : primaryGenreName // ignore: cast_nullable_to_non_nullable
@@ -296,6 +309,7 @@ class _$_MovieModel implements _MovieModel {
       this.previewUrl,
       required this.releaseDate,
       required this.country,
+      this.trackTimeMillis = 0,
       required this.primaryGenreName});
 
   factory _$_MovieModel.fromJson(Map<String, dynamic> json) =>
@@ -330,11 +344,14 @@ class _$_MovieModel implements _MovieModel {
   @override
   final String country;
   @override
+  @JsonKey()
+  final int trackTimeMillis;
+  @override
   final String primaryGenreName;
 
   @override
   String toString() {
-    return 'MovieModel(wrapperType: $wrapperType, kind: $kind, artistId: $artistId, collectionId: $collectionId, trackId: $trackId, artistName: $artistName, trackName: $trackName, collectionName: $collectionName, trackCensoredName: $trackCensoredName, artistViewUrl: $artistViewUrl, artworkUrl100: $artworkUrl100, previewUrl: $previewUrl, releaseDate: $releaseDate, country: $country, primaryGenreName: $primaryGenreName)';
+    return 'MovieModel(wrapperType: $wrapperType, kind: $kind, artistId: $artistId, collectionId: $collectionId, trackId: $trackId, artistName: $artistName, trackName: $trackName, collectionName: $collectionName, trackCensoredName: $trackCensoredName, artistViewUrl: $artistViewUrl, artworkUrl100: $artworkUrl100, previewUrl: $previewUrl, releaseDate: $releaseDate, country: $country, trackTimeMillis: $trackTimeMillis, primaryGenreName: $primaryGenreName)';
   }
 
   @override
@@ -367,6 +384,8 @@ class _$_MovieModel implements _MovieModel {
             (identical(other.releaseDate, releaseDate) ||
                 other.releaseDate == releaseDate) &&
             (identical(other.country, country) || other.country == country) &&
+            (identical(other.trackTimeMillis, trackTimeMillis) ||
+                other.trackTimeMillis == trackTimeMillis) &&
             (identical(other.primaryGenreName, primaryGenreName) ||
                 other.primaryGenreName == primaryGenreName));
   }
@@ -389,6 +408,7 @@ class _$_MovieModel implements _MovieModel {
       previewUrl,
       releaseDate,
       country,
+      trackTimeMillis,
       primaryGenreName);
 
   @JsonKey(ignore: true)
@@ -421,6 +441,7 @@ abstract class _MovieModel implements MovieModel {
       final String? previewUrl,
       required final DateTime releaseDate,
       required final String country,
+      final int trackTimeMillis,
       required final String primaryGenreName}) = _$_MovieModel;
 
   factory _MovieModel.fromJson(Map<String, dynamic> json) =
@@ -454,6 +475,8 @@ abstract class _MovieModel implements MovieModel {
   DateTime get releaseDate;
   @override
   String get country;
+  @override
+  int get trackTimeMillis;
   @override
   String get primaryGenreName;
   @override

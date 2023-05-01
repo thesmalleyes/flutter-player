@@ -22,6 +22,7 @@ _$_MovieModel _$$_MovieModelFromJson(Map<String, dynamic> json) =>
       previewUrl: json['previewUrl'] as String?,
       releaseDate: DateTime.parse(json['releaseDate'] as String),
       country: json['country'] as String,
+      trackTimeMillis: json['trackTimeMillis'] as int? ?? 0,
       primaryGenreName: json['primaryGenreName'] as String,
     );
 
@@ -41,5 +42,6 @@ Map<String, dynamic> _$$_MovieModelToJson(_$_MovieModel instance) =>
       'previewUrl': instance.previewUrl,
       'releaseDate': instance.releaseDate.toIso8601String(),
       'country': instance.country,
+      'trackTimeMillis': instance.trackTimeMillis,
       'primaryGenreName': instance.primaryGenreName,
     };
